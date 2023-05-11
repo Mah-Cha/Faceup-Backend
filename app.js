@@ -5,16 +5,18 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-const fileUpload = require('express-fileupload');
-var indexRouter = require('./routes/index');
+// const fileUpload = require('express-fileupload');
+
 
 var app = express();
 
+var indexRouter = require('./routes/index');
 const cors = require('cors');
+
+
 app.use(cors());
 
-
-app.use(fileUpload());
+// app.use(fileUpload());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
